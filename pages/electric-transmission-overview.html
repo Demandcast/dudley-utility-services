@@ -182,7 +182,7 @@ html, body {
   text-transform: uppercase;
 }
 .dus-eyebrow::before {
-  content: ""; width: 9px; height: 9px; background: var(--green-500);
+  content: ""; width: 12px; height: 12px; background: var(--green-500);
   flex: 0 0 auto;
 }
 .dus-eyebrow--teal { color: var(--teal-500); }
@@ -292,19 +292,20 @@ body.print-body { margin: 0; padding: 40px; display: flex; flex-direction: colum
 }
 
 .header-band { position: absolute; left: 0; right: 0; top: 0; height: 2.5in; padding: .55in; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; }
-.header-band .dus-logo { height: .42in; }
-.header-title .dus-micro { margin-bottom: .12in; }
+.header-band .dus-logo { height: .5in; }
+.header-title .dus-micro { margin-bottom: .12in; margin-top: .14in; }
 .header-title .dus-display { color: var(--white); font-size: 30pt; }
-.body-area { position: absolute; left: .55in; right: .55in; top: 2.5in; bottom: .9in; padding-top: .42in; }
+.body-area { position: absolute; left: .55in; right: .55in; top: 2.5in; bottom: .9in; padding-top: .42in; overflow: hidden; }
 .body-ticks { position: absolute; left: .3in; right: .3in; top: 2.8in; bottom: 1.2in; pointer-events: none; }
 .lede { color: var(--text-2); font-size: 12.5pt; line-height: 1.55; }
 .section { margin-top: .45in; }
 .services { display: grid; grid-template-columns: 1fr 1fr; column-gap: .34in; row-gap: 10pt; margin-top: .16in; color: var(--ink-800); font-size: 11pt; line-height: 1.25; }
-.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: .16in; margin-top: .34in; }
-.stat-card { padding: .38in .3in; }
+.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: .16in; margin-top: .2in; }
+.stat-card { padding: .24in .2in; }
 .stat-card .value { font-size: 30pt; }
-.stat-card .label { font-size: 8pt; line-height: 1.35; }
-.closing { position: absolute; left: 0; right: 0; bottom: 1.18in; text-align: center; letter-spacing: .3em; color: var(--ink-500); }
+.stat-card .label { font-size: 9pt; line-height: 1.35; }
+.closing { position: absolute; left: 0; right: 0; bottom: .98in; text-align: center; letter-spacing: .3em; color: var(--ink-500); }
+.page:last-child .body-area { bottom: 1.35in; padding-top: .28in; }
 .footer-band { position: absolute; left: 0; right: 0; bottom: 0; height: .9in; padding: 0 .55in; display: flex; align-items: center; justify-content: space-between; gap: .4in; }
 .footer-band .dus-logo { height: .3in; }
 .footer-text { color: var(--on-dark-2); font-size: 8.5pt; line-height: 1.45; text-align: right; }
@@ -314,23 +315,30 @@ body.print-body { margin: 0; padding: 40px; display: flex; flex-direction: colum
 /* ---------- Overview-specific (layout only; core system untouched) ---------- */
 .section p.body { font-size: 11pt; line-height: 1.5; color: var(--ink-800); margin-top: .1in; }
 .section { margin-top: .28in; }
-.howlist li b { font-weight: 900; color: var(--teal-700); }
+/* How We Work — infographic step cards */
+.how-steps { display: grid; grid-template-columns: 1fr 1fr; gap: .12in; margin-top: .14in; }
+.how-step { border: 1px solid var(--neutral-200); border-radius: 0; padding: .12in .14in; display: flex; gap: .1in; align-items: flex-start; }
+.how-step .step-num { font-weight: 900; font-size: 20pt; line-height: 0.95; letter-spacing: -0.03em; color: var(--teal-300); flex: 0 0 auto; }
+.how-step .step-title { font-weight: 900; font-size: 10pt; color: var(--teal-700); line-height: 1.25; }
+.how-step .step-desc { font-size: 9.5pt; line-height: 1.4; color: var(--ink-700); margin-top: 1pt; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .3in; margin-top: .14in; }
 .contact-cards .name, .contact-grid .name { font-weight: 900; font-size: 12pt; color: var(--teal-700); }
 .contact-cards .role, .contact-grid .role { font-size: 9.5pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-600); margin: 2pt 0 4pt; }
 .contact-cards .line, .contact-grid .line { font-size: 10.5pt; color: var(--ink-800); }
-.howgrid { display: grid; grid-template-columns: 1fr 1fr; column-gap: .34in; row-gap: 10pt; margin-top: .14in; font-size: 10.5pt; line-height: 1.4; }
-.route-strip { margin: .32in 0 0; }
+.route-strip { margin: .28in 0 0; height: 1.5px; background: linear-gradient(to right, var(--teal-500), var(--green-500)); border: none; }
 .kudu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .14in; margin-top: .18in; }
 .kudu-card { border: 1px solid var(--neutral-200); border-radius: 0; padding: .15in .18in; }
+.kudu-icon { width: .22in; height: .22in; display: block; margin-bottom: 3pt; }
 .kudu-card .kt { font-weight: 900; font-size: 11pt; color: var(--teal-700); margin-bottom: 4pt; }
 .kudu-card .kl { font-size: 10pt; line-height: 1.4; color: var(--ink-700); }
-.dark-band { padding: .24in .3in .3in; margin-top: .28in; }
+.dark-band { padding: .18in .3in .2in; margin-top: .2in; }
 .dark-band .bt { font-weight: 900; font-size: 13.5pt; color: var(--on-dark); margin-bottom: 5pt; }
 .dark-band p { font-size: 10.5pt; line-height: 1.5; color: var(--on-dark-2); }
-.contact-cards { display: grid; grid-template-columns: 1fr 1fr; gap: .14in; margin-top: .16in; }
+.contact-cards { display: grid; grid-template-columns: 1fr 1fr; gap: .14in; margin-top: .12in; }
 .contact-card { border: 1px solid var(--neutral-200); border-radius: 0; padding: .16in .2in; }
 .contact-cards .line { font-size: 10pt; }
+.section--flush { margin-top: 0; }
+.kudu-tagline { font-weight: 900; font-size: 13pt; color: var(--teal-700); margin-top: .12in; }
 
 </style>
 </head>
@@ -345,7 +353,6 @@ body.print-body { margin: 0; padding: 40px; display: flex; flex-direction: colum
         <h1 class="dus-display">BUILT ON EXPERIENCE.<br>FOCUSED ON EXECUTION.</h1>
       </div>
     </header>
-    <div class="body-ticks dus-ticks" aria-hidden="true"><span class="tick-b"></span></div>
     <section class="body-area">
       <p class="lede">We create certainty for electric transmission projects: securing critical land rights, navigating stakeholder relationships, and protecting the path from development through construction.</p>
       <section class="section">
@@ -363,35 +370,46 @@ body.print-body { margin: 0; padding: 40px; display: flex; flex-direction: colum
       </section>
       <section class="section">
         <div class="dus-eyebrow dus-eyebrow--teal">HOW WE WORK</div>
-        <ul class="dus-check howgrid">
-          <li><span><b>Start prepared:</b> ownership, requirements, documents, and strategy validated up front.</span></li>
-          <li><span><b>No surprises:</b> clients informed, communities engaged, risks visible early.</span></li>
-          <li><span><b>Every parcel has a path:</b> status and next action, always current.</span></li>
-          <li><span><b>Engaged through completion:</b> construction, restoration, closeout.</span></li>
-        </ul>
+        <div class="how-steps">
+          <div class="how-step dus-ticks">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <div class="step-title">Start prepared</div>
+              <div class="step-desc">Ownership, requirements, documents, and strategy validated up front.</div>
+            </div>
+            <span class="tick-b"></span>
+          </div>
+          <div class="how-step dus-ticks">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <div class="step-title">No surprises</div>
+              <div class="step-desc">Clients informed, communities engaged, risks visible early.</div>
+            </div>
+            <span class="tick-b"></span>
+          </div>
+          <div class="how-step dus-ticks">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <div class="step-title">Every parcel has a path</div>
+              <div class="step-desc">Status and next action, always current.</div>
+            </div>
+            <span class="tick-b"></span>
+          </div>
+          <div class="how-step dus-ticks">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <div class="step-title">Engaged through completion</div>
+              <div class="step-desc">Construction, restoration, closeout.</div>
+            </div>
+            <span class="tick-b"></span>
+          </div>
+        </div>
       </section>
-      <div class="dus-route rw-on-light route-strip" aria-hidden="true">
-        <svg viewBox="0 0 1200 96" xmlns="http://www.w3.org/2000/svg">
-          <g class="rw-tick">
-            <line x1="100" y1="40" x2="100" y2="56"/><line x1="300" y1="40" x2="300" y2="56"/>
-            <line x1="500" y1="40" x2="500" y2="56"/><line x1="700" y1="40" x2="700" y2="56"/>
-            <line x1="900" y1="40" x2="900" y2="56"/><line x1="1100" y1="40" x2="1100" y2="56"/>
-          </g>
-          <line class="rw-center" x1="0" y1="48" x2="1200" y2="48" fill="none" stroke-dasharray="26 8 3 8"/>
-          <g class="rw-mon">
-            <rect x="192" y="40" width="16" height="16"/>
-            <rect x="592" y="40" width="16" height="16"/>
-            <rect x="992" y="40" width="16" height="16"/>
-          </g>
-          <g class="rw-dot">
-            <circle cx="200" cy="48" r="2.5"/><circle cx="600" cy="48" r="2.5"/><circle cx="1000" cy="48" r="2.5"/>
-          </g>
-        </svg>
-      </div>
+      <div class="route-strip" aria-hidden="true"></div>
       <section class="stat-row">
-        <div class="dus-card stat-card dus-stat dus-stat--light"><div class="value">35+</div><div class="label">Years of combined utility land leadership</div></div>
-        <div class="dus-card stat-card dus-stat dus-stat--light"><div class="value">34.5&ndash;765</div><div class="label">kV executed by our leadership</div></div>
-        <div class="dus-card stat-card dus-stat dus-stat--light"><div class="value">45+</div><div class="label">Years of Dudley Land Company energy-land expertise</div></div>
+        <div class="dus-card stat-card dus-stat dus-stat--light dus-ticks"><div class="value">35+</div><div class="label">Years of combined utility land leadership</div><span class="tick-b"></span></div>
+        <div class="dus-card stat-card dus-stat dus-stat--light dus-ticks"><div class="value">34.5&ndash;765</div><div class="label">kV executed by our leadership</div><span class="tick-b"></span></div>
+        <div class="dus-card stat-card dus-stat dus-stat--light dus-ticks"><div class="value">45+</div><div class="label">Years of Dudley Land Company energy-land expertise</div><span class="tick-b"></span></div>
       </section>
     </section>
     <footer class="footer-band dus-band dus-grid-dark"><img class="dus-logo" src="data:image/png;base64,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" alt="DUS logo"><div class="footer-text">Houston &middot; Dallas/Fort Worth &middot; Oklahoma City &middot; Pittsburgh<br>dudley-utility.com</div></footer>
@@ -406,18 +424,29 @@ body.print-body { margin: 0; padding: 40px; display: flex; flex-direction: colum
         <h1 class="dus-display">HOW WE KEEP YOUR<br>PROJECT ON SCHEDULE.</h1>
       </div>
     </header>
-    <div class="body-ticks dus-ticks" aria-hidden="true"><span class="tick-b"></span></div>
     <section class="body-area">
       
-      <section class="section" style="margin-top: 0;">
+      <section class="section section--flush">
         <div class="dus-eyebrow dus-eyebrow--teal">KUDU &middot; YOUR PROJECT RECORD</div>
-        <p class="body" style="font-weight: 900; font-size: 13pt; color: var(--teal-700); margin-top: .12in;">Real-time project intelligence. Better decisions. Lower risk.</p>
+        <p class="body kudu-tagline">Real-time project intelligence. Better decisions. Lower risk.</p>
         <p class="body">Kudu is Dudley&rsquo;s proprietary land management platform, giving your team a current, organized view of every parcel from kickoff through closeout.</p>
         <div class="kudu-grid">
-          <div class="kudu-card"><div class="kt">Real-time visibility</div><div class="kl">Parcel activity, acquisition status, and key risks as the work occurs.</div></div>
-          <div class="kudu-card"><div class="kt">One source of truth</div><div class="kl">Ownership, tract data, deed references, and acreage in one record.</div></div>
-          <div class="kudu-card"><div class="kt">Progress, mapped</div><div class="kl">Acquisition status and risk presented visually for faster review.</div></div>
-          <div class="kudu-card"><div class="kt">Document control</div><div class="kl">Title, survey, and field documents complete through closeout.</div></div>
+          <div class="kudu-card dus-ticks">
+            <svg class="kudu-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="dg1" x1="0" y1="12" x2="24" y2="12" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#015270"/><stop offset="100%" stop-color="#41BE48"/></linearGradient></defs><rect x="2" y="3" width="20" height="14" rx="1" stroke="url(#dg1)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="17" x2="12" y2="21" stroke="url(#dg1)" stroke-width="1.2" stroke-linecap="round"/><line x1="7" y1="21" x2="17" y2="21" stroke="url(#dg1)" stroke-width="1.2" stroke-linecap="round"/></svg>
+            <div class="kt">Real-time visibility</div><div class="kl">Parcel activity, acquisition status, and key risks as the work occurs.</div><span class="tick-b"></span>
+          </div>
+          <div class="kudu-card dus-ticks">
+            <svg class="kudu-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="dg2" x1="0" y1="12" x2="24" y2="12" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#015270"/><stop offset="100%" stop-color="#41BE48"/></linearGradient></defs><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2V3z" stroke="url(#dg2)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7V3z" stroke="url(#dg2)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="kt">One source of truth</div><div class="kl">Ownership, tract data, deed references, and acreage in one record.</div><span class="tick-b"></span>
+          </div>
+          <div class="kudu-card dus-ticks">
+            <svg class="kudu-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="dg3" x1="0" y1="12" x2="24" y2="12" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#015270"/><stop offset="100%" stop-color="#41BE48"/></linearGradient></defs><polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2" stroke="url(#dg3)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><line x1="8" y1="2" x2="8" y2="18" stroke="url(#dg3)" stroke-width="1.2"/><line x1="16" y1="6" x2="16" y2="22" stroke="url(#dg3)" stroke-width="1.2"/></svg>
+            <div class="kt">Progress, mapped</div><div class="kl">Acquisition status and risk presented visually for faster review.</div><span class="tick-b"></span>
+          </div>
+          <div class="kudu-card dus-ticks">
+            <svg class="kudu-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="dg4" x1="0" y1="12" x2="24" y2="12" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#015270"/><stop offset="100%" stop-color="#41BE48"/></linearGradient></defs><rect x="2" y="3" width="20" height="5" rx="1" stroke="url(#dg4)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 8v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8" stroke="url(#dg4)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="12" x2="14" y2="12" stroke="url(#dg4)" stroke-width="1.2" stroke-linecap="round"/></svg>
+            <div class="kt">Document control</div><div class="kl">Title, survey, and field documents complete through closeout.</div><span class="tick-b"></span>
+          </div>
         </div>
       </section>
       <div class="dark-band dus-field-teal dus-grid-dark dus-horizon">
@@ -427,15 +456,17 @@ body.print-body { margin: 0; padding: 40px; display: flex; flex-direction: colum
       <section class="section">
         <div class="dus-eyebrow dus-eyebrow--teal">START THE CONVERSATION</div>
         <div class="contact-cards">
-          <div class="contact-card">
+          <div class="contact-card dus-ticks">
             <div class="name">Garrett Gill</div>
             <div class="role">Executive Vice President, Utilities</div>
             <div class="line">832-888-7238<br>GarrettGill@dudley-utility.com</div>
+            <span class="tick-b"></span>
           </div>
-          <div class="contact-card">
+          <div class="contact-card dus-ticks">
             <div class="name">Savannah Cano</div>
             <div class="role">Regional Director, Utilities</div>
             <div class="line">620-357-1212<br>SavannahCano@dudley-utility.com</div>
+            <span class="tick-b"></span>
           </div>
         </div>
       </section>
