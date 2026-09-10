@@ -15,12 +15,12 @@ Four pillars, mapped to the four Dudley values DUS inherits word for word. Indus
 dimension inside a pillar, never a pillar of their own. Certainty is the spine every pillar
 expresses without ever naming it.
 
-| # | Pillar | Value | The one line |
+| # | Value | Pillar | The one line |
 |---|---|---|---|
-| 1 | The people on the project are the project | Our People | Who does the work decides how the work goes. |
-| 2 | Service gets measured twice | Our Service | Two people judge us at once, and the community member comes first. |
-| 3 | How the work works | Our Product | We show command of the work by showing the work. |
-| 4 | The work is the proof | Our Example | Demonstrate it, never claim it. |
+| 1 | Our People | The people on the project are the project | Who does the work decides how the work goes. |
+| 2 | Our Service | Service gets measured twice | Two people judge us at once, and the community member comes first. |
+| 3 | Our Product | How the work works | We show command of the work by showing the work. |
+| 4 | Our Example | The work is the proof | Demonstrate it, never claim it. |
 
 Pillar titles are full thoughts rather than nouns, so a person or an agent can route a piece of
 content by title alone.
@@ -45,8 +45,10 @@ community member's door matters to the schedule.
 **Does not belong here:** any promise about specific people staying on a specific project. The
 subject is the investment and the standard, never a personnel guarantee.
 
-**Routing test:** if you removed the people from the post and it still made its point, it isn't
-pillar 1.
+**Routing test:** it's Our People when the subject is a person or the team: who we hire, how we
+train them, how we treat them, what a career here looks like. If people appear in the post but
+the real subject is the method they're running, it's Our Product. If the real subject is what the
+client or the community member gets, it's Our Service.
 
 ---
 
@@ -55,13 +57,13 @@ pillar 1.
 **Value:** Our Service
 
 **In one line.** Exceptional service here gets judged by two people at once, the client watching
-the schedule and the budget and the community member across the kitchen table, and the client
-themselves ranked the community first.
+the schedule and the budget and the community member across the kitchen table.
 
 **The reader's question it answers.** *What will it feel like to have you on my project, and what
 will my customers experience?*
 
-**Belongs here:** representing the client to their own customers and communities. Schedule
+**Belongs here:** representing the client exceptionally well to their own customers and
+communities. Schedule
 certainty and what protecting an in-service date requires from day one. The walk-away. The
 estimate and why holding it beats padding it. Continuity through construction. What a community
 member gets in writing, and when.
@@ -69,8 +71,10 @@ member gets in writing, and when.
 **Does not belong here:** the mechanics of how a service is performed. That's pillar 3. This
 pillar is about the standard we hold, not the method we run.
 
-**Routing test:** the post names a person we're accountable TO. If nobody is being served in it,
-it isn't pillar 2.
+**Routing test:** it's Our Service when the post is written from the position of somebody we
+answer to. Ask who feels this. If the answer is the client watching the schedule or the community
+member at the front door, it's Our Service. If the answer is our own team, it's Our People. If the
+post describes the machinery rather than what that person experiences, it's Our Product.
 
 ---
 
@@ -92,8 +96,10 @@ up, what we did, what it protected.
 this work daily. Every post here shows OUR way of handling something real, never how the work
 runs in general.
 
-**Routing test:** the post contains a mechanism a competitor couldn't copy into their own deck
-without lying. If it survives a logo swap, it isn't pillar 3.
+**Routing test:** it's Our Product when the post shows how we handle something specific: what
+comes up, what we do about it, what that protects. The reader should finish it knowing our way of
+doing that one thing. If the post names a result that already happened, it's Our Example. If it's
+about the standard we hold rather than the mechanism we run, it's Our Service. If it survives a logo swap, it isn't pillar 3.
 
 ---
 
@@ -101,8 +107,9 @@ without lying. If it survives a logo swap, it isn't pillar 3.
 
 **Value:** Our Example
 
-**In one line.** Receipts. Outcomes held, challenges closed, recognition earned, always
-anonymized on the client side.
+**In one line.** Relationships may create the first opportunity, and performance creates the
+next one. This pillar is the receipts: outcomes held, challenges closed, recognition earned,
+always anonymized on the client side.
 
 **The reader's question it answers.** *What have you actually done?*
 
@@ -113,9 +120,10 @@ project, route or location name.
 **Does not belong here:** any figure not verified in writing, and any adjective standing in for
 a result. If the post can't name what happened, it belongs in pillar 3.
 
-**Routing test:** pillar 3 shows *how* Dudley works. Pillar 4 shows *what that produced*.
-Negotiating encroachments is pillar 3. The rebuild that energized on schedule because of it is
-pillar 4.
+**Routing test:** it's Our Example when the post can name something that already happened: a
+number, an outcome, a recognition, a project that ended a particular way. Past tense is the tell.
+If the post describes how we work in general, it's Our Product. Negotiating encroachments is Our
+Product; the rebuild that energized on schedule because of it is Our Example.
 
 **Garrett wrote the thesis himself** (2026-08-18): *"Relationships may create the first
 opportunity. Performance creates the next one. Our reputation should be built through how we
@@ -493,6 +501,29 @@ script.
 ---
 
 # Part 6 — Change record
+
+## Applied 2026-09-09 — routing tests rewritten, table reordered
+
+Jenny's review of the client-facing doc. All of this is now live in `DUS Social Content Pillars`
+in Drive, which Garrett and Savannah received the same day.
+
+- **The routing tests only told you what a post wasn't.** Jenny: *"you're talking about how to
+  exclude posts from this pillar, but not how to actually determine posts that go on this
+  pillar."* All four rewritten to open with the positive test and close by naming where the post
+  goes instead. They discriminate on one axis each so they don't overlap: People = *who*,
+  Service = *for whom*, Product = *how* (present tense), Example = *what happened* (past tense).
+- **The old pillar 3 test is retired.** "A mechanism a competitor couldn't copy into their own
+  deck without lying" was the most opaque of the four and wasn't testable.
+- **Tests name the values, not the numbers.** The client has no reason to remember which number
+  is which.
+- **At-a-glance table reordered** so Value comes before Pillar (Jenny's call).
+- **Garrett's thesis folded into pillar 4's one-liner** rather than carried as an attributed
+  quote. Jenny wanted it stated as what the pillar is.
+- **Pillar 2 carries Jenny's own edits** from the live doc: the client-ranked-community clause
+  is cut from the one-liner, and we represent the client *exceptionally well*.
+
+Part 5 stays. The client-facing doc drops the weighting material to keep it simple; this file is
+the working copy for the skill and the team, so the order of attack and the voice model remain.
 
 ## Applied 2026-09-04 — client corrections from Onboarding #7
 
