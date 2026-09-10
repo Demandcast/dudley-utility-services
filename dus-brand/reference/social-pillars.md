@@ -17,10 +17,10 @@ expresses without ever naming it.
 
 | # | Pillar | Value | The one line |
 |---|---|---|---|
-| 1 | The people on the project are the project | The People | Who does the work decides how the work goes. |
-| 2 | Service gets measured twice | The Service | Two people judge us at once, and the community member comes first. |
-| 3 | How the work works | The Product | We show command of the work by showing the work. |
-| 4 | The work is the proof | The Example | Demonstrate it, never claim it. |
+| 1 | The people on the project are the project | Our People | Who does the work decides how the work goes. |
+| 2 | Service gets measured twice | Our Service | Two people judge us at once, and the community member comes first. |
+| 3 | How the work works | Our Product | We show command of the work by showing the work. |
+| 4 | The work is the proof | Our Example | Demonstrate it, never claim it. |
 
 Pillar titles are full thoughts rather than nouns, so a person or an agent can route a piece of
 content by title alone.
@@ -29,14 +29,15 @@ content by title alone.
 
 ## Pillar 1 — The people on the project are the project
 
-**Value:** The People
+**Value:** Our People
 
-**In one line.** Who does the work decides how the work goes, and DUS invests in those people
-before a client ever meets them.
+**In one line.** Who does the work decides how the work goes, and DUS invests in the whole team
+before a client ever meets any of them.
 
 **The reader's question it answers.** *Who is actually going to show up on my project?*
 
-**Belongs here:** hiring and what we look for. Cross-training across every step of the work. The
+**Belongs here:** hiring and what we look for. Cross-training across every step of the work, for
+the people running it as much as the people doing it. The
 recruiting engine Dudley Land Company has built since 1980. The dedicated W-2 workforce.
 Leadership continuity. What a utility land career at Dudley looks like. Why the person at a
 community member's door matters to the schedule.
@@ -51,7 +52,7 @@ pillar 1.
 
 ## Pillar 2 — Service gets measured twice
 
-**Value:** The Service
+**Value:** Our Service
 
 **In one line.** Exceptional service here gets judged by two people at once, the client watching
 the schedule and the budget and the community member across the kitchen table, and the client
@@ -75,7 +76,7 @@ it isn't pillar 2.
 
 ## Pillar 3 — How the work works
 
-**Value:** The Product
+**Value:** Our Product
 
 **In one line.** We show command of the work by showing the work, the problems a right-of-way
 throws and what we do about them.
@@ -98,7 +99,7 @@ without lying. If it survives a logo swap, it isn't pillar 3.
 
 ## Pillar 4 — The work is the proof
 
-**Value:** The Example
+**Value:** Our Example
 
 **In one line.** Receipts. Outcomes held, challenges closed, recognition earned, always
 anonymized on the client side.
@@ -322,12 +323,15 @@ website: anything shipped on the live site or the SOQ has cleared the client.
 
 ## Pillar 1 — The people on the project are the project
 
-1. **Trainability over pre-skill:** what we actually look for when we hire a land professional.
-   *(Flagship true story, pending Savannah's OK per the byline test: hired with no
-   right-of-way experience on raw talent, project coordinator to director, with the
-   accounting-and-finance background regulated utilities demand. Garrett told it himself on 8/7,
-   along with the foil: "we got the best people" is what everybody says, and the resumes show
-   seven companies in as many years.)*
+1. **A balance of experience and talent:** what we actually look for when we hire a land
+   professional, and why it depends on the role. *(Reworked 9/4 — Garrett rejected
+   talent-over-pre-skill as a company position: "professionally you have to have those 15-year
+   people," naming a ten-year agent who never wanted to be anything but a great agent. His frame
+   is the judgment call, never the preference. Savannah's flagship story stays available pending
+   her OK per the byline test: hired with no right-of-way experience, project coordinator to
+   director, with the accounting-and-finance background regulated utilities demand. Garrett's
+   8/7 foil still runs in his voice: "we got the best people" is what everybody says, and the
+   resumes show seven companies in as many years.)*
 2. **What a cross-trained land professional knows that a specialist doesn't,** walked through one
    stage handoff.
 3. **Familiarity with the ground:** what changes in a conversation when the land professional
@@ -489,6 +493,29 @@ script.
 ---
 
 # Part 6 — Change record
+
+## Applied 2026-09-04 — client corrections from Onboarding #7
+
+Garrett and Savannah reviewed one pillar-1 sample post in three voices and stopped there. Two
+corrections came out of it, both applied here and in the client-facing Drive docs on 9/9.
+
+- **The values are "Our," not "The."** Savannah: *"it's our people. Our sir, I found that out
+  afterwards."* Confirmed against the Dudley website, which already reads that way. All four
+  `Value:` lines and the at-a-glance table are corrected.
+- **Pillar 1's premise was wrong.** Garrett rejected talent-over-pre-skill as a company position:
+  *"professionally you have to have those 15-year people."* He named a ten-year agent who never
+  wanted to be anything except the best agent he could be. His own rewrite, offered twice: **a
+  balance of experience and talent**, with cross-training developing what somebody can become.
+  Savannah added "or leveraging experience and cross-training." Angle 1 is reworked accordingly.
+- **Pillar 1 covers the whole team.** Savannah: *"I don't want to be so hyperfocused on the people
+  that are actually doing the work, but also encompassing people that are supervising or
+  leading."* Her own hire is the case: back-office remit, now land director. Her ruling on scope
+  is **"our team," not the individual.** The one-liner and the belongs-here list now say so.
+- **Open, not applied here.** Garrett diagnosed how the bad line got in: *"this was all taken from
+  a like interview question... if this is the base statement I could go through all of my
+  statements and tweak them to be more my voice."* An off-the-cuff spoken preference had been
+  promoted to a company position. The remaining posts have **not** been audited for the same
+  defect.
 
 ## Applied 2026-09-03 — the website refresh, the 9/2 client round, and the first ingest run
 
