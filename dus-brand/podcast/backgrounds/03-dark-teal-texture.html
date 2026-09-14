@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PBP Background — Dark Teal Texture</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; }
+body {
+  background: linear-gradient(135deg, #021018 0%, #032230 40%, #033349 100%);
+  position: relative;
+}
+/* Survey grid — very subtle on dark */
+body::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(to right, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 44px),
+    repeating-linear-gradient(to bottom, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 44px);
+  background-size: 44px 44px;
+}
+body::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(to right, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 176px),
+    repeating-linear-gradient(to bottom, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 176px);
+  background-size: 176px 176px;
+}
+/* Green edge glow — bottom right */
+.glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 40% 40% at 90% 85%, rgba(65,190,72,0.08), transparent 70%);
+}
+/* Teal vignette */
+.vig {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 70% at 50% 50%, transparent 50%, rgba(2,16,24,0.6) 100%);
+}
+/* Corner ticks */
+.tk { position: absolute; }
+.tk::before, .tk::after { content: ""; position: absolute; background: rgba(255,255,255,0.12); }
+.tl { top: 40px; left: 40px; }
+.tl::before { width: 28px; height: 1px; }
+.tl::after { width: 1px; height: 28px; }
+.tr { top: 40px; right: 40px; }
+.tr::before { width: 28px; height: 1px; right: 0; }
+.tr::after { width: 1px; height: 28px; right: 0; }
+.bl { bottom: 40px; left: 40px; }
+.bl::before { width: 28px; height: 1px; bottom: 0; }
+.bl::after { width: 1px; height: 28px; bottom: 0; }
+.br { bottom: 40px; right: 40px; }
+.br::before { width: 28px; height: 1px; right: 0; bottom: 0; }
+.br::after { width: 1px; height: 28px; right: 0; bottom: 0; }
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="vig"></div>
+<div class="tk tl"></div><div class="tk tr"></div>
+<div class="tk bl"></div><div class="tk br"></div>
+</body>
+</html>

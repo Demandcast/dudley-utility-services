@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PBP Background — Square Social</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1080px; overflow: hidden; }
+body {
+  background: linear-gradient(to right, #033349 0%, #014A65 35%, #015270 65%, #0b7a48 100%);
+  position: relative;
+}
+body::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(to right, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 44px),
+    repeating-linear-gradient(to bottom, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 44px);
+  background-size: 44px 44px;
+}
+body::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(to right, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 176px),
+    repeating-linear-gradient(to bottom, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 176px);
+  background-size: 176px 176px;
+}
+/* Upper parcel zone — top third only */
+.parcels {
+  position: absolute;
+  top: 40px; left: 40px; right: 40px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4px;
+}
+.p { border: 1px solid rgba(255,255,255,0.07); position: relative; }
+.p.on { border-color: rgba(255,255,255,0.16); background: rgba(255,255,255,0.02); }
+.p.hl { border-color: #41BE48; background: rgba(65,190,72,0.06); }
+.p .id {
+  position: absolute; top: 6px; left: 8px;
+  font-family: 'Lato', sans-serif; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.08em; color: rgba(255,255,255,0.12);
+}
+.p.on .id { color: rgba(255,255,255,0.24); }
+.p.hl .id { color: rgba(65,190,72,0.5); }
+/* Lower text-safe zone — scrim */
+.scrim {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 480px;
+  background: linear-gradient(to top, rgba(3,51,73,0.85) 0%, rgba(3,51,73,0.4) 60%, transparent 100%);
+  pointer-events: none;
+}
+.glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 40% at 15% 90%, rgba(65,190,72,0.08), transparent 70%);
+}
+/* Corner ticks */
+.tk { position: absolute; }
+.tk::before, .tk::after { content: ""; position: absolute; background: rgba(255,255,255,0.18); }
+.tl { top: 24px; left: 24px; }
+.tl::before { width: 24px; height: 1px; }
+.tl::after { width: 1px; height: 24px; }
+.tr { top: 24px; right: 24px; }
+.tr::before { width: 24px; height: 1px; right: 0; }
+.tr::after { width: 1px; height: 24px; right: 0; }
+.bl { bottom: 24px; left: 24px; }
+.bl::before { width: 24px; height: 1px; bottom: 0; }
+.bl::after { width: 1px; height: 24px; bottom: 0; }
+.br { bottom: 24px; right: 24px; }
+.br::before { width: 24px; height: 1px; right: 0; bottom: 0; }
+.br::after { width: 1px; height: 24px; right: 0; bottom: 0; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="parcels">
+  <div class="p"><span class="id">01</span></div>
+  <div class="p on"><span class="id">02</span></div>
+  <div class="p hl"><span class="id">03</span></div>
+  <div class="p"><span class="id">04</span></div>
+  <div class="p on"><span class="id">05</span></div>
+  <div class="p"><span class="id">06</span></div>
+  <div class="p"><span class="id">07</span></div>
+  <div class="p on"><span class="id">08</span></div>
+  <div class="p"><span class="id">09</span></div>
+  <div class="p"><span class="id">10</span></div>
+  <div class="p on"><span class="id">11</span></div>
+  <div class="p"><span class="id">12</span></div>
+  <div class="p"><span class="id">13</span></div>
+  <div class="p hl"><span class="id">14</span></div>
+  <div class="p"><span class="id">15</span></div>
+</div>
+<div class="scrim"></div>
+<div class="glow"></div>
+<div class="tk tl"></div><div class="tk tr"></div>
+<div class="tk bl"></div><div class="tk br"></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PBP Background — Sweep + Survey Grid</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; }
+body {
+  background: linear-gradient(to right, #033349 0%, #014A65 35%, #015270 65%, #0b7a48 100%);
+  position: relative;
+}
+/* Survey grid — fine */
+body::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(to right, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 44px),
+    repeating-linear-gradient(to bottom, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 44px);
+  background-size: 44px 44px;
+}
+/* Survey grid — major lines */
+body::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(to right, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 176px),
+    repeating-linear-gradient(to bottom, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 176px);
+  background-size: 176px 176px;
+}
+/* Subtle green radial glow bottom-left */
+.glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 12% 92%, rgba(65,190,72,0.12), transparent 70%);
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+</body>
+</html>

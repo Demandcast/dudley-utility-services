@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PBP Background — Vertical Sweep (9:16)</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; }
+body {
+  background: linear-gradient(to bottom, #033349 0%, #014A65 35%, #015270 65%, #0b7a48 100%);
+  position: relative;
+}
+body::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(to right, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 44px),
+    repeating-linear-gradient(to bottom, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 44px);
+  background-size: 44px 44px;
+}
+body::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(to right, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 176px),
+    repeating-linear-gradient(to bottom, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 176px);
+  background-size: 176px 176px;
+}
+.glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 30% at 50% 95%, rgba(65,190,72,0.10), transparent 70%);
+}
+/* Parcel strip — left edge */
+.strip {
+  position: absolute;
+  top: 60px; left: 32px; bottom: 60px;
+  width: 48px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.s { flex: 1; border: 1px solid rgba(255,255,255,0.06); }
+.s.on { border-color: rgba(255,255,255,0.14); background: rgba(255,255,255,0.02); }
+.s.hl { border-color: #41BE48; background: rgba(65,190,72,0.06); }
+/* Corner ticks */
+.tk { position: absolute; }
+.tk::before, .tk::after { content: ""; position: absolute; background: rgba(255,255,255,0.18); }
+.tl { top: 28px; left: 28px; }
+.tl::before { width: 24px; height: 1px; }
+.tl::after { width: 1px; height: 24px; }
+.tr { top: 28px; right: 28px; }
+.tr::before { width: 24px; height: 1px; right: 0; }
+.tr::after { width: 1px; height: 24px; right: 0; }
+.bl { bottom: 28px; left: 28px; }
+.bl::before { width: 24px; height: 1px; bottom: 0; }
+.bl::after { width: 1px; height: 24px; bottom: 0; }
+.br { bottom: 28px; right: 28px; }
+.br::before { width: 24px; height: 1px; right: 0; bottom: 0; }
+.br::after { width: 1px; height: 24px; right: 0; bottom: 0; }
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="strip">
+  <div class="s hl"></div>
+  <div class="s on"></div>
+  <div class="s"></div>
+  <div class="s hl"></div>
+  <div class="s"></div>
+  <div class="s on"></div>
+  <div class="s"></div>
+  <div class="s"></div>
+  <div class="s on"></div>
+  <div class="s"></div>
+  <div class="s hl"></div>
+  <div class="s"></div>
+</div>
+<div class="tk tl"></div><div class="tk tr"></div>
+<div class="tk bl"></div><div class="tk br"></div>
+</body>
+</html>
