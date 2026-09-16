@@ -127,7 +127,8 @@ html, body {
 }
 /* Fade the grid toward the top so type stays clean: add .dus-grid-fade */
 .dus-grid-fade::before {
-  background-image: inherit;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 42%);
+          mask-image: linear-gradient(to bottom, transparent 0%, #000 42%);
 }
 
 /* Dark field helpers — gradient + green under-glow + grid stack correctly */
