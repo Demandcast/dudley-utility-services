@@ -750,6 +750,16 @@ p, li { text-wrap: pretty; }
 .board-foot { margin-top: 22px; font-size: 15px; color: var(--text-2); }
 .board-foot a { color: var(--teal-500); font-weight: 700; }
 .samplenote { margin-top: 14px; }
+.board-detail .dbody { margin-top: 26px; }
+.board-detail .dbody > * + * { margin-top: 12px; }
+.board-detail .dbody b, .board-detail .dbody strong { color: var(--teal-500); }
+.board-detail .dbody ul, .board-detail .dbody ol { padding-left: 20px; }
+.board-detail .dbody li { margin-bottom: 6px; }
+.board-empty { margin-top: 38px; font-size: 17px; color: var(--text-2); }
+.apply-view { margin-top: 38px; }
+.apply-back { display: inline-block; font-size: 15px; font-weight: 700; color: var(--teal-500); text-decoration: none; padding: 10px 0; min-height: 44px; }
+.apply-back:hover { color: var(--green-600); }
+#applyMount iframe { display: block; width: 100%; min-height: 600px; border: 1px solid var(--neutral-200); background: var(--white); }
 @media (max-width: 900px) {
   .board { grid-template-columns: 1fr; }
   .board-list { border-right: none; border-bottom: 1px solid var(--neutral-200); max-height: none; overflow-y: visible; }
@@ -796,72 +806,6 @@ p, li { text-wrap: pretty; }
 }
 </style>
 
-<!-- Structured Data: JobPosting (Google for Jobs) -->
-<script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Right-of-Way Agent",
-    "description": "Represent utility projects with community members along the route: meeting with them on their own ground, presenting written offers, negotiating easements, and keeping every commitment on the record.",
-    "datePosted": "2026-09-01",
-    "employmentType": "FULL_TIME",
-    "jobLocationType": null,
-    "jobLocation": [
-      {"@type": "Place", "address": {"@type": "PostalAddress", "addressRegion": "TX", "addressCountry": "US"}},
-      {"@type": "Place", "address": {"@type": "PostalAddress", "addressRegion": "OK", "addressCountry": "US"}},
-      {"@type": "Place", "address": {"@type": "PostalAddress", "addressRegion": "NM", "addressCountry": "US"}}
-    ],
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Dudley Utility Services",
-      "sameAs": "https://dudley-utility.com"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Title Agent",
-    "description": "Run title at the courthouse and online: chains of title, ownership reports, and curative work that holds up when the project depends on it.",
-    "datePosted": "2026-09-01",
-    "employmentType": "FULL_TIME",
-    "jobLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressRegion": "OK", "addressCountry": "US"}},
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Dudley Utility Services",
-      "sameAs": "https://dudley-utility.com"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Land Manager",
-    "description": "Run the land effort on utility projects: staffing to parcel count, keeping every file current and complete, and being the person the client calls first.",
-    "datePosted": "2026-09-01",
-    "employmentType": "FULL_TIME",
-    "jobLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressRegion": "TX", "addressCountry": "US"}},
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Dudley Utility Services",
-      "sameAs": "https://dudley-utility.com"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Project Coordinator",
-    "description": "Keep the project record current and complete: parcel files, status reports, and documentation that makes construction handoff and closeout clean.",
-    "datePosted": "2026-09-01",
-    "employmentType": "FULL_TIME",
-    "jobLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressRegion": "TX", "addressCountry": "US"}},
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Dudley Utility Services",
-      "sameAs": "https://dudley-utility.com"
-    }
-  }
-]
-</script>
 </head>
 <body>
 <svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><linearGradient id="dus-icon-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#015270"/><stop offset="40%" stop-color="#0A7196"/><stop offset="100%" stop-color="#41BE48"/></linearGradient></defs></svg>
@@ -904,6 +848,7 @@ p, li { text-wrap: pretty; }
     <a href="#life">Life at DUS</a>
     <a href="#benefits">Benefits</a>
     <a href="#start">Get started</a>
+    <a href="#positions">Open positions</a>
     <a href="#highlights">Company highlights</a>
   </div>
 </nav>
@@ -976,17 +921,21 @@ p, li { text-wrap: pretty; }
   </div>
 </section>
 
-<!-- ============ OPEN POSITIONS (HIDDEN 2026-09-04) ==================
-     Hidden until roles are posted with Paycor. The board markup and its
-     JOBS data further down are intact; restore by deleting this wrapper.
-
+<!-- ============ OPEN POSITIONS =====================================
+     Live from Paycor Recruiting via /api/jobs (department "Utilities").
+     HR manages postings in Paycor; nothing here needs editing per job. -->
 <section id="positions" class="sec sec-divider">
   <div class="wrap">
     <div class="dus-eyebrow dus-eyebrow--teal reveal">Join us</div>
     <h2 class="dus-h1 sec-title reveal">Open positions</h2>
-    <div class="board reveal">
+    <div class="board reveal" id="jobBoard">
       <div class="board-list" id="jobList" role="tablist" aria-label="Open positions"></div>
       <div class="board-detail" id="jobDetail" role="tabpanel" aria-label="Job details"></div>
+    </div>
+    <p class="board-empty reveal" id="jobEmpty" hidden></p>
+    <div class="apply-view" id="applyView" hidden>
+      <a class="apply-back" href="/pages/careers#positions">&larr; Back to open positions</a>
+      <div id="applyMount"></div>
     </div>
     <div class="resume-callout dus-ticks dus-grid-dark reveal"><span class="tick-b"></span>
       <p>If working with us feels like the right fit but you don't see a role that matches your experience, send us your resume.</p>
@@ -994,7 +943,6 @@ p, li { text-wrap: pretty; }
     </div>
   </div>
 </section>
--->
 
 <!-- ===================== 04 · COMPANY HIGHLIGHTS ===================== -->
 <section id="highlights" class="sec sec-alt">
@@ -1111,84 +1059,61 @@ p, li { text-wrap: pretty; }
 </main>
 
 <script>
-// Job data. Fields map 1:1 to the Paycor ATOM feed so this array can be
-// swapped for the live feed without touching the markup:
-//   title -> title | loc/more -> newton:location + newton:state
-//   remote -> newton:remotetype (blank when Paycor carries none)
-//   work/bring -> summary
-var JOBS = [
-  {
-    id: 'row-agent',
-    title: 'Right-of-Way Agent',
-    remote: 'Fully Remote',
-    loc: 'Texas',
-    more: ['Oklahoma', 'New Mexico'],
-    work: "You'll represent utility projects with the community members along the route: meeting with them on their own ground, presenting written offers, negotiating easements, and keeping every commitment you make on the record.",
-    bring: [
-      'Experience in right-of-way, title, or land work, or the drive to be mentored into it',
-      'Comfort knocking on a door and explaining a project plainly',
-      'A record of doing what you said you would do'
-    ]
-  },
-  {
-    id: 'title-agent',
-    title: 'Title Agent',
-    remote: 'Fully Remote',
-    loc: 'Oklahoma',
-    more: [],
-    work: "You'll run title at the courthouse and online: chains of title, ownership reports, and curative work that holds up when the project depends on it.",
-    bring: [
-      'Courthouse title research experience, any land discipline',
-      'Clean, organized work product under real deadlines',
-      'Willingness to travel to the counties the route crosses'
-    ]
-  },
-  {
-    id: 'land-manager',
-    title: 'Land Manager',
-    remote: 'Hybrid',
-    loc: 'Texas',
-    more: [],
-    work: "You'll run the land effort on utility projects: staffing to parcel count, keeping every file current and complete, and being the person the client calls first.",
-    bring: [
-      'Years leading right-of-way or land teams on linear projects',
-      'Command of acquisition status, budgets, and schedule',
-      'The judgment to raise a risk before it becomes a problem'
-    ]
-  },
-  {
-    id: 'project-coordinator',
-    title: 'Project Coordinator',
-    remote: '',
-    loc: 'Texas',
-    more: [],
-    work: "You'll keep the project record current and complete: parcel files, status reports, and the documentation that makes construction handoff and closeout clean.",
-    bring: [
-      'Sharp document control across large file sets',
-      'Comfort in spreadsheets, databases, and project tools',
-      'The instinct to chase a missing signature today'
-    ]
-  }
-];
+// Open positions board (NVIDIA pattern: list left, full posting right).
+// Jobs come from /api/jobs, which reads the Paycor ATOM feed. Postings with
+// the same title are grouped into one row; each location keeps its own
+// Paycor job id so the applicant applies to the right requisition.
+// Applying swaps the board for Paycor's application iframe on this page
+// (?gnk=apply&gni=<id>), so the applicant never leaves dudley-utility.com.
 
-var APPLY_MAIL = 'mailto:garrettgill@dudley-utility.com,SavannahCano@dudley-utility.com';
+var PAYCOR_IFRAME = '//recruitingbypaycor.com/career/iframe.action?clientId=8a7883d08afcf3b0018b676ba35c277e';
+var GROUPS = [];
 
-function renderDetail(job) {
-  var locHtml = job.loc;
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+
+function placeName(j) {
+  if (!j.city || /^remote$/i.test(j.city)) return j.state || 'Remote';
+  return j.state ? j.city + ', ' + j.state : j.city;
+}
+
+function applyHref(id) {
+  return '/pages/careers?gnk=apply&gni=' + encodeURIComponent(id) + '#positions';
+}
+
+function groupJobs(jobs) {
+  var byTitle = {};
+  jobs.forEach(function (j) {
+    var key = j.title.trim().toLowerCase();
+    if (!byTitle[key]) {
+      byTitle[key] = { key: j.id, title: j.title, remote: j.remote, body: j.body, published: j.published, reqs: [] };
+      GROUPS.push(byTitle[key]);
+    }
+    byTitle[key].reqs.push({ id: j.id, place: placeName(j) });
+  });
+}
+
+function renderDetail(g) {
+  var first = g.reqs[0];
+  var others = g.reqs.slice(1);
+  var locHtml = esc(first.place);
   var moreHtml = '';
-  if (job.more.length) {
-    locHtml += ' &nbsp;<button class="locmore" id="locMore">+' + job.more.length + ' more</button>';
-    moreHtml = '<div class="loclist" id="locList">' + job.more.join(' &middot; ') + '</div>';
+  if (others.length) {
+    locHtml += ' &nbsp;<button class="locmore" id="locMore">+' + others.length + ' more</button>';
+    moreHtml = '<div class="loclist" id="locList">' + others.map(function (r) {
+      return '<a href="' + applyHref(r.id) + '">' + esc(r.place) + '</a>';
+    }).join(' &middot; ') + '</div>';
   }
   var d = document.getElementById('jobDetail');
   d.innerHTML =
-    (job.remote ? '<span class="type-pill">' + job.remote + '</span>' : '') +
-    '<div class="dtitle">' + job.title + '</div>' +
+    (g.remote ? '<span class="type-pill">' + esc(g.remote) + '</span>' : '') +
+    '<div class="dtitle">' + esc(g.title) + '</div>' +
     '<div class="dloc">' + locHtml + moreHtml + '</div>' +
-    '<a class="dus-btn dus-btn--primary" href="' + APPLY_MAIL +
-      '?subject=' + encodeURIComponent('Application: ' + job.title + ' — Dudley Utility Services') + '">Apply now</a>' +
-    '<h4>The work</h4><p>' + job.work + '</p>' +
-    '<h4>What you bring</h4><ul>' + job.bring.map(function (b) { return '<li>' + b + '</li>'; }).join('') + '</ul>';
+    '<a class="dus-btn dus-btn--primary" href="' + applyHref(first.id) + '">Apply now</a>' +
+    '<div class="dbody">' + g.body + '</div>';
   var more = document.getElementById('locMore');
   if (more) {
     more.addEventListener('click', function () {
@@ -1197,35 +1122,98 @@ function renderDetail(job) {
   }
 }
 
-function selectJob(id) {
-  var job = JOBS.filter(function (j) { return j.id === id; })[0];
+function selectJob(key, scroll) {
+  var g = GROUPS.filter(function (x) { return x.key === key; })[0];
   var items = document.querySelectorAll('.job-item');
   for (var i = 0; i < items.length; i++) {
-    var isActive = items[i].dataset.id === id;
+    var isActive = items[i].dataset.id === key;
     items[i].classList.toggle('active', isActive);
     items[i].setAttribute('aria-selected', isActive ? 'true' : 'false');
   }
-  renderDetail(job);
-  if (window.innerWidth <= 900) {
+  renderDetail(g);
+  if (scroll && window.innerWidth <= 900) {
     document.getElementById('jobDetail').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
 
-(function () {
+function renderBoard() {
   var list = document.getElementById('jobList');
-  JOBS.forEach(function (job) {
+  GROUPS.forEach(function (g) {
     var b = document.createElement('button');
     b.className = 'job-item';
-    b.dataset.id = job.id;
+    b.dataset.id = g.key;
     b.setAttribute('role', 'tab');
     b.setAttribute('aria-selected', 'false');
-    b.innerHTML = '<span class="jtitle">' + job.title + '</span>' +
-      '<span class="jmeta">' + job.loc + (job.more.length ? ' +' + job.more.length + ' more' : '') +
-      (job.remote ? ' &middot; ' + job.remote : '') + '</span>';
-    b.addEventListener('click', function () { selectJob(job.id); });
+    b.innerHTML = '<span class="jtitle">' + esc(g.title) + '</span>' +
+      '<span class="jmeta">' + esc(g.reqs[0].place) + (g.reqs.length > 1 ? ' +' + (g.reqs.length - 1) + ' more' : '') +
+      (g.remote ? ' &middot; ' + esc(g.remote) : '') + '</span>';
+    b.addEventListener('click', function () { selectJob(g.key, true); });
     list.appendChild(b);
   });
-  selectJob(JOBS[0].id);
+  selectJob(GROUPS[0].key, false);
+}
+
+// Google for Jobs reads JobPosting data; build it from the live postings.
+function renderStructuredData(jobs) {
+  var data = jobs.map(function (j) {
+    var remote = /remote/i.test(j.remote) || /^remote$/i.test(j.city);
+    var posting = {
+      '@context': 'https://schema.org',
+      '@type': 'JobPosting',
+      title: j.title,
+      description: j.body,
+      datePosted: (j.published || '').slice(0, 10),
+      hiringOrganization: { '@type': 'Organization', name: 'Dudley Utility Services', sameAs: 'https://www.dudley-utility.com' },
+      directApply: true,
+      url: 'https://www.dudley-utility.com' + applyHref(j.id).replace('#positions', '')
+    };
+    if (remote) {
+      posting.jobLocationType = 'TELECOMMUTE';
+      posting.applicantLocationRequirements = { '@type': 'Country', name: 'US' };
+    } else {
+      posting.jobLocation = { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: j.city, addressRegion: j.state, addressCountry: 'US' } };
+    }
+    return posting;
+  });
+  var s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.text = JSON.stringify(data);
+  document.head.appendChild(s);
+}
+
+function showEmpty(msg) {
+  document.getElementById('jobBoard').hidden = true;
+  var e = document.getElementById('jobEmpty');
+  e.textContent = msg;
+  e.hidden = false;
+}
+
+function showApply() {
+  document.getElementById('jobBoard').hidden = true;
+  document.getElementById('applyView').hidden = false;
+  var s = document.createElement('script');
+  s.id = 'gnewtonjs';
+  s.src = PAYCOR_IFRAME;
+  document.getElementById('applyMount').appendChild(s);
+  document.getElementById('positions').scrollIntoView();
+}
+
+(function () {
+  var q = new URLSearchParams(window.location.search);
+  if (q.get('gni') && (q.get('gnk') || q.get('page') === 'confirmation')) return showApply();
+
+  fetch('/api/jobs')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (data.error) return showEmpty("Open positions aren't loading right now. Refresh the page, or send us your resume below.");
+      if (!data.jobs.length) return showEmpty("We don't have open positions posted right now.");
+      groupJobs(data.jobs);
+      renderBoard();
+      renderStructuredData(data.jobs);
+    })
+    .catch(function () {
+      showEmpty("Open positions aren't loading right now. Refresh the page, or send us your resume below.");
+    });
 })();
 </script>
 
