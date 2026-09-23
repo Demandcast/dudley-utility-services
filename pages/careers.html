@@ -1188,7 +1188,27 @@ function showEmpty(msg) {
   e.hidden = false;
 }
 
+// Paycor's iframe links ("Go back to the job list", job links) ask this page
+// to navigate to the careers URL Paycor has on file, which is Dudley Land's.
+// Paycor's script does that navigation with window.open(url, '_self') on this
+// page, so catch Dudley Land careers URLs and keep the applicant on DUS.
+function keepApplicantsOnDus() {
+  var open = window.open;
+  window.open = function (url, target) {
+    try {
+      var u = new URL(url, window.location.href);
+      if (/(^|\.)dudley-land\.com$/.test(u.hostname) && u.pathname.indexOf('/work-with-us') === 0) {
+        var dest = u.searchParams.get('gni') ? '/pages/careers' + u.search + '#positions' : '/pages/careers#positions';
+        window.location.assign(dest);
+        return null;
+      }
+    } catch (e) {}
+    return open.apply(window, arguments);
+  };
+}
+
 function showApply() {
+  keepApplicantsOnDus();
   document.getElementById('jobBoard').hidden = true;
   document.getElementById('applyView').hidden = false;
   var s = document.createElement('script');
