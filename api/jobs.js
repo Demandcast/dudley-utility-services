@@ -5,6 +5,10 @@
 // (department "Utilities" in Paycor). HR adds, edits, and closes jobs in
 // Paycor; the careers page picks the change up within the cache window.
 //
+// ?scope=all returns every department. The Dudley Land careers page on
+// Webflow uses it: Webflow can't read the feed server-side and Paycor sends
+// no CORS header, so dudley-land.com reads the jobs from here instead.
+//
 // Env overrides (all optional):
 //   PAYCOR_FEED_URL    full feed URL; point at services.newtonsoftware.com
 //                      to read the Paycor sandbox instead of production
@@ -14,6 +18,7 @@ const CLIENT_ID = '8a7883d08afcf3b0018b676ba35c277e';
 const FEED_URL = process.env.PAYCOR_FEED_URL ||
   `https://recruitingbypaycor.com/career/CareerAtomFeed.action?clientId=${CLIENT_ID}`;
 const DEPARTMENT = process.env.PAYCOR_DEPARTMENT || 'Utilities';
+const ALLOWED_ORIGINS = ['https://www.dudley-land.com', 'https://dudley-land.com'];
 
 function decode(s) {
   return String(s || '')
@@ -62,13 +67,17 @@ function parse(xml) {
 }
 
 module.exports = async (req, res) => {
+  const origin = req.headers && req.headers.origin;
+  if (ALLOWED_ORIGINS.includes(origin)) res.setHeader('Access-Control-Allow-Origin', origin);
+  res.setHeader('Vary', 'Origin');
+  const all = req.query && req.query.scope === 'all';
   try {
     const r = await fetch(FEED_URL, { headers: { Accept: 'application/atom+xml' } });
     if (!r.ok) throw new Error(`feed ${r.status}`);
     const xml = await r.text();
     if (!xml.includes('<feed')) throw new Error('not an atom feed');
     const jobs = parse(xml)
-      .filter((j) => j.department.toLowerCase() === DEPARTMENT.toLowerCase())
+      .filter((j) => all || j.department.toLowerCase() === DEPARTMENT.toLowerCase())
       .sort((a, b) => (b.published || '').localeCompare(a.published || ''));
     // Paycor recommends refreshing at least every 5 minutes.
     res.setHeader('Cache-Control', 'public, s-maxage=240, stale-while-revalidate=600');
