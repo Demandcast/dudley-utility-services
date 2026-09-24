@@ -1207,8 +1207,27 @@ function keepApplicantsOnDus() {
   };
 }
 
+// Each time the form loads a step, Paycor scrolls this page so the iframe's
+// top edge sits at the top of the window, under the sticky nav and section
+// bar. Paycor's offset setting is shared with Dudley Land, which has no sticky
+// nav, so shift that one scroll here by the page's own anchor offset.
+function clearStickyNavOnApply() {
+  var scrollTo = window.scrollTo;
+  window.scrollTo = function (x, y) {
+    var f = document.getElementById('gnewtonIframe');
+    if (f && arguments.length === 2 && typeof y === 'number') {
+      var top = f.getBoundingClientRect().top + window.pageYOffset;
+      if (Math.abs(y - top) < 2) {
+        y -= parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+      }
+    }
+    return scrollTo.call(window, x, y);
+  };
+}
+
 function showApply() {
   keepApplicantsOnDus();
+  clearStickyNavOnApply();
   document.getElementById('jobBoard').hidden = true;
   document.getElementById('applyView').hidden = false;
   var s = document.createElement('script');
