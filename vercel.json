@@ -17,7 +17,7 @@
       ]
     },
     {
-      "source": "/(brand|pages/soq|pages/brand-voice|pages/social-pillars|pages/electric-transmission-v2|pages/electric-transmission-pillar|pages/electric-distribution-pillar|pages/fiber-optics-broadband-pillar|pages/gas-utility-pillar|pages/water-utility-pillar)",
+      "source": "/(brand|pages/soq|pages/brand-voice|pages/social-pillars|pages/electric-transmission-v2|pages/electric-transmission-pillar|pages/electric-distribution-pillar|pages/fiber-optics-broadband-pillar|pages/gas-utility-pillar|pages/water-utility-pillar|pages/gas-utility-review)",
       "headers": [
         {
           "key": "X-Robots-Tag",
