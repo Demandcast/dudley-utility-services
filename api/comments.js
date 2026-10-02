@@ -1,5 +1,6 @@
 const { neon } = require('@neondatabase/serverless');
 const { getSession, readJson } = require('./_lib');
+const { notifyComment } = require('./_notify');
 
 const sql = neon(process.env.DATABASE_URL);
 
@@ -23,6 +24,7 @@ module.exports = async (req, res) => {
       INSERT INTO review_comments (page, email, quote, prefix, suffix, body)
       VALUES (${page}, ${session.email}, ${quote || null}, ${prefix || null}, ${suffix || null}, ${body})
       RETURNING id, page, email, quote, prefix, suffix, body, resolved, created_at`;
+    await notifyComment(req, rows[0]);
     return res.status(200).json({ comment: rows[0] });
   }
 
