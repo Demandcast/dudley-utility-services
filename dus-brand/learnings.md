@@ -2,6 +2,14 @@
 
 Corrections and rules established during builds. Read this before every DUS design task.
 
+## No Light Blue, Anywhere (Established 2026-10-09, from Jenny's feedback)
+
+**Rule: Never use light blue or light teal on any DUS asset. Light grounds are white, `--neutral-100` (#F5F5F5), or `--neutral-200` (#EBEBEB).**
+
+- Covers teal-200, teal-100, teal-050 and any pale blue tint, in every role: section and table-stripe fills, hairlines, map land and water, chart series, dark-mode link text
+- Caught on the WSP SOQ web page: zebra-striped office rows and the coverage-map land fill came out baby blue. Jenny: "I don't like the baby blue... we never use that shade for Dudley Utilities because it just never looks good." The website's coverage map is neutral gray, and every DUS map follows it
+- Extends SKILL.md rule 4, which already banned light teal as a background fill
+
 ## Corner Treatment (Established 2026-08-25, from Jenny's feedback)
 
 **Rule: All cards, panels, and boxed elements use straight corners (border-radius: 0) with plat-sheet corner ticks (`.dus-ticks`). Never use rounded corners on cards.**

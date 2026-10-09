@@ -16,6 +16,8 @@
   --teal-500: #015270;   /* DUS Teal — primary */
   --teal-400: #0A7196;
   --teal-300: #2E93B8;
+  /* teal-200 / 100 / 050: NEVER USE. Light blue never works for DUS (Jenny, 2026-10-09).
+     Kept only so the ramp documents what's off-limits; light grounds are neutrals. */
   --teal-200: #7EC0D6;
   --teal-100: #D6ECF3;
   --teal-050: #EDF6FA;
