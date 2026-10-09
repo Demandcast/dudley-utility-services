@@ -21,6 +21,7 @@ DUS's product is a defensible route across land: survey grids, plat maps, sectio
 | Dudley Green (accent) | `#41BE48` | Checkmarks, rules, route line, stat units, pill text. ≤ ~8% of any composition. Never body text below 20px except on ink. |
 | Ink | `#2B2B2B` text · `#06090B` grounds | Large dark fields are gradients (`--field-teal`, `--field-ink`), never flat #000. |
 | Neutrals | `#EBEBEB`, `#F5F5F5`, white | Whitespace is a brand asset. Default ground is white. |
+| **Never: light blue** | `#7EC0D6`, `#D6ECF3`, `#EDF6FA` (teal-200/100/050) and any pale blue tint | Banned in every role: fills, table stripes, hairlines, map land/water, chart series, dark-mode text. Light grounds are neutrals only. (Jenny, 2026-10-09) |
 
 Proportions on a typical asset: ~70% white/neutral, ~20% teal, ~8% ink, ≤2% green. Dark-field assets invert: teal field dominant, green still ≤ ~8%.
 
