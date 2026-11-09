@@ -126,3 +126,7 @@ This means:
 - [2026-09-10] **Stat card labels: 9pt minimum in print.** 8pt label text under stat values was hard to read at print resolution. Floor is now 9pt for `.stat-card .label`. Value size (30pt) stays.
 - [2026-09-10] **Header logo size on one-pagers: .5in.** Was .42in, which felt undersized against the 30pt display headline. .5in gives the mark proper presence without crowding the kicker line.
 - [2026-09-10] **Kudu cards need gradient SVG icons.** Every Kudu card should carry its corresponding icon (monitor, book, map, archive) with the DUS gradient stroke, sized at `.22in` (`.kudu-icon`). Icons go above the title inside the card. Each icon gets its own `<linearGradient>` `id` to avoid SVG ID collisions within a single page.
+
+- [2026-10-20] **Brand book PDF build: render at a 720px viewport** (letter width minus 0.5in margins), then `page.pdf({preferCSSPageSize:true, printBackground:true})`. The template previews scale to the window width, so a default-viewport render shrinks them to half width and reflows the back third of the book.
+
+- [2026-11-09] **The DUS logo keeps the Dudley Green UTILITY SERVICES descriptor.** The 2026-10-20 teal rebuild was a proposal; Garrett prefers the green, so the original green logo files are restored everywhere. Don't re-propose teal.
