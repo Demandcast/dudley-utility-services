@@ -16,6 +16,9 @@ You are producing brand assets for **Dudley Utility Services (DUS)**, the utilit
 1. **Read `learnings.md`** — corrections and rules from past builds. Non-negotiable.
 2. **Open `index.html` (the brand guide) in your browser or read it** — this is the visual source of truth. It renders every foundation (colors, type, spacing, surfaces, icons, grid, corner ticks) and every component as they actually look. When you're unsure how something should look, the brand guide settles it. Reference it for: color usage and proportions, typography scale and weights, surface treatments (field gradients, survey grid, horizon rule), component patterns (cards, stats, heroes, footers), icon style, corner tick treatment, and spacing rhythm.
 3. **Read `dus-core.css`** if the task touches any CSS or HTML structure.
+4. **Open `exemplars/README.md` and the captures closest to your task** — the shipped, public-facing DUS work: the live site, the one-pagers, the SOQ, and the published episode art. The templates say how an asset is built; the exemplars show what finished DUS work looks like with real content in it.
+
+**The design reference is the live Vercel site (`dudley-utility.com`, served from `pages/` in this repo) and this folder. Nothing else.** A Webflow rebuild of the site exists and changed parts of the design system; those changes are not approved. Never reference, match, or borrow from the Webflow version (Jenny, 2026-11-18).
 
 Skip to the task if it's code maintenance, SEO, form swaps, or other non-visual work. For asset creation, continue:
 
@@ -42,9 +45,39 @@ Skip to the task if it's code maintenance, SEO, form swaps, or other non-visual 
 | Proposal, SOW, engagement doc | `templates/proposal.html` | US Letter ×4 |
 | Business card (front + back) | `templates/business-card.html` | 1050×600 ×2 |
 
-Something that fits none of these (e.g., email header, event badge, report cover): start from the closest template above, keep its surface treatment (field gradient + survey grid + horizon rule OR white + light grid), its type classes, and its logo usage, and only change the canvas dimensions. Say explicitly in your reply that this is an adapted format.
+Podcast or video art (cover, episode art, clip frames, quote cards, backgrounds): see "Podcast and video" below.
+
+Something that fits none of these (e.g., email header, event badge, report cover, a web page for a new purpose): start from the closest template above, keep its surface treatment (field gradient + survey grid + horizon rule OR white + light grid), its type classes, and its logo usage, and only change the canvas dimensions. Say explicitly in your reply that this is an adapted format.
 
 For carousels and decks: duplicate the appropriate slide/page section for more slides; delete unused masters. Update the `01 / N` counters.
+
+## Logo
+
+The DUS logo is the DUDLEY wordmark with **UTILITY SERVICES in Dudley Green (`#41BE48`), flush with the left edge of DUDLEY**. Confirmed by the client and the Dudley owners (2026-11-10). A teal descriptor was proposed in October 2026 and reversed. Never use, rebuild, or re-propose a teal or light blue version.
+
+Masters are in `assets/logo/`, each as SVG, PDF, and a 3000px transparent PNG:
+
+| File | Use |
+|---|---|
+| `dus-logo-black-green` | White and light backgrounds. The default. |
+| `dus-logo-white-green` | Dark backgrounds, including the teal field. |
+| `dus-logo-all-white` | Only when color isn't an option on a dark ground: website footers, over photos, dark merchandise. |
+| `dus-logo-all-black` | Only when color isn't an option on a light ground: black-and-white printing, forms, engraving, partners who ask for one color. |
+
+File type: SVG for web pages and anything a designer will work in, PNG for documents, slides, email, and social graphics, PDF for print.
+
+The templates embed the same logo as base64 (`assets/dus-logo.b64` black and green, `assets/dus-logo-white.b64` white and green). Keep those when you copy a template. Reach for `assets/logo/` when you build something new or need a larger file.
+
+Use the files as they are. Never retype the name, stretch, recolor, or add effects. Constrain by height only (`width: auto`). Clear space is half the wordmark height. Minimum width is 120px on screen and 1.1in in print.
+
+## Podcast and video
+
+`podcast/index.html` is a podcast branding kit built on this system: cover, episode art, vertical and square clip frames, quote cards, and promo cards, with six rendered backgrounds in `podcast/backgrounds/`. Read it before making any audio or video asset.
+
+- **What has shipped** is in `exemplars/podcast/`: the DUS 001 full episode, teaser, clip, and snippet thumbnails. Match those first.
+- **The show name in the kit, "Parcel by Parcel," is a concept.** DUS 001 shipped under the DUS logo with no show name. Don't put "Parcel by Parcel" on anything client-facing unless Jenny confirms the name.
+- **Dark frames use the teal-to-green sweep with the survey grid.** Light frames use the white grid with the black-and-green logo.
+- Episode delivery pages live in `Demandcast/demandcast-delivery` (`data/dus001.ts` is the first DUS episode). A DUS-branded page for an episode or interview is an adapted format: build it from this system and the exemplars, and say that it's adapted.
 
 ## Spacing system
 
@@ -163,7 +196,7 @@ Colors: `--teal` (teal-500), `--green` (green-500), `--sky` (teal-400).
 
 1. **Colors are locked.** DUS Teal `#015270` (primary), Dudley Green `#41BE48` (accent only), the neutral ramp, white. Never introduce any other hue. Green is seasoning: if it covers more than ~8% of a composition, cut some.
 2. **Lato only.** 900 for headlines, 700 for labels/subheads, 400 for body. No other typeface, ever.
-3. **The logo is artwork.** Use the embedded PNG data URIs (black version on light, white version on dark). Never re-type "DUDLEY" in Lato, never stretch, recolor, or add effects.
+3. **The logo is artwork.** Use the embedded PNG data URIs or the masters in `assets/logo/` (black and green on light, white and green on dark; see "Logo" above). UTILITY SERVICES is always Dudley Green, never teal or light blue. Never re-type "DUDLEY" in Lato, never stretch, recolor, or add effects.
 4. **Dark surfaces are the field gradients** (`--field-teal` / `--field-ink`), never flat `#000000`, and they always carry the survey grid and usually the green horizon rule. **Teal field is the default dark surface.** Ink field is the alternate — use it only when consecutive dark slides need visual distinction (decks, carousels). Single dark sections (heroes, footers, brand book demos) always use teal. **Never use light blue/teal anywhere** (`--teal-200`, `--teal-100`, `--teal-050`, or any pale blue tint): not as a background, table stripe, hairline, map land or water, chart color, or dark-mode text. It never looks good for DUS (Jenny, 2026-10-09). Light grounds are white, `--neutral-100`, or `--neutral-200` only. Neutral placeholder fills use `--neutral-100`. Section backgrounds are white, `--neutral-100` gray, or dark field gradients only. Use structural 1px hairline dividers (`border-bottom: 1px solid var(--neutral-200)`) between consecutive same-background sections.
 5. **No short decorative bars or lines.** No accent bars (any color, any orientation) — no `border-left` on quotes, no `border-top` on cards, no vertical divider bars between stats or service rows, no short horizontal rules, no thin decorative lines between contact fields or infographic columns. These are an AI tell. Color is irrelevant — green, teal, neutral, any color; the bar/line motif itself is the problem. Use spacing, layout, and the plat-sheet corner ticks (`.dus-ticks`) as the distinctive treatment instead.
 6. **Icons are outlined + DUS gradient.** Always use outline/line-style icons (never filled/solid). Apply the DUS gradient (teal→green, left to right) as the stroke via SVG `<linearGradient>`. Never use flat single-color icons. Source from Remix Icon (remixicon.com), always the "-line" suffix variants.
@@ -182,7 +215,7 @@ Colors: `--teal` (teal-500), `--green` (green-500), `--sky` (teal-400).
 
 **The other four services each have a pillar of the same shape: `reference/electric-distribution-pillar.md`, `reference/fiber-optics-broadband-pillar.md`, `reference/gas-utility-pillar.md`, `reference/water-utility-pillar.md`.** Anything about one of those services reads its pillar first. All four are drafts in review (2026-08-19): the one-liners are proposed, not client-settled, and each pillar's § What this pillar still needs lists what can't be published yet.
 
-**For facts about the work itself — what DUS does, which services a capability applies to, who buys, what they weigh, what proof exists — read the DUS Reference Library in Drive** at `Dudley/DUS/Reference Library`. Five docs, built from all seven 2026 onboarding sessions: an **Index** (the extraction laws and a source ledger), **Core Competencies — By Function and Service** (the nine land functions, their sub-points, the function-by-service applicability matrix, the project phase walk, and the settled cost-driver, terminology and voltage rulings), **Service Profiles — The Five Services**, **Client and Buyer Intelligence** (how utility work is actually bought: the programmatic cycle, invitation-only RFPs, the path to a master service agreement, the right-of-way org chart, what clients score, client types, and the information firewalls between departments), and **Proof, Claims and Confidentiality** (every proof point sorted into publishable / needs-sign-off / never-publish, the named-entity list, and the facts that disagree with each other). Every claim is sourced and marked GREEN (client-stated, publishable), YELLOW (inferred, confirm first), or RED (a named gap, never filled). The pillars own the position; the library owns the evidence. Never go back to meeting transcripts for a fact the library should hold — add it to the library first, then write.
+**For facts about the work itself — what DUS does, which services a capability applies to, who buys, what they weigh, what proof exists — read the DUS Reference Library in Drive** at `Dudley/DUS/Reference Library`. Six docs, built from the 2026 client sessions, the DUS 001 episode, and the client's review comments: an **Index** (the extraction laws and a source ledger), **Core Competencies — By Function and Service** (the nine land functions, their sub-points, the function-by-service applicability matrix, the project phase walk, and the settled cost-driver, terminology and voltage rulings), **Service Profiles — The Five Services**, **Client and Buyer Intelligence** (how utility work is actually bought: the programmatic cycle, invitation-only RFPs, the path to a master service agreement, the right-of-way org chart, what clients score, client types, and the information firewalls between departments), and **Proof, Claims and Confidentiality** (every proof point sorted into publishable / needs-sign-off / never-publish, the named-entity list, and the facts that disagree with each other), and **Company Profile — The Business, the People, the Record** (heritage, ownership, scale, leadership, Kudu, careers; read it before writing anything that speaks for the company instead of a service). Every claim is sourced and marked GREEN (client-stated, publishable), YELLOW (inferred, confirm first), or RED (a named gap, never filled). The pillars own the position; the library owns the evidence. Never go back to meeting transcripts for a fact the library should hold — add it to the library first, then write.
 
 **Distribution has no page of its own as of 2026-08-21.** Garrett asked to fold it into the transmission material (transmission is 85–90% of DUS work for the next five years; distribution is a small fragment now that storm-hardening undergrounding is largely done). Its pillar's positioning may survive; its page premise does not. Do not draft a distribution page.
 
@@ -195,7 +228,7 @@ Four things that break the brand faster than any visual mistake:
 3. **Never mention renewables.** No solar, wind, battery storage, or energy-transition framing anywhere. Standing client instruction, and it differs from Dudley Land Company.
 4. **Every claim carries a mechanism.** "We reduce risk" is a claim. "We convert blanket easements to defined right-of-way before survey" is a mechanism. Claims without mechanisms get cut.
 
-**Mission and claim are not the same thing.** "Delivering energy through land" is Dudley Land Company's mission statement, retired for DUS surfaces: not to be used unless the rule in `reference/voice.md` is changed (Jenny, 2026-08-17). "Creating certainty through strategic land solutions" is what DUS sells, and it works as a display line where a surface calls for the positioning statement.
+**Mission and claim are not the same thing.** "Delivering energy through land" is Dudley Land Company's mission statement, retired for DUS surfaces: not to be used unless the rule in `reference/voice.md` is changed (Jenny, 2026-08-17). "Creating certainty through strategic land solutions" is what DUS sells. It is the internal positioning claim and stays on the client-approved SOQ, but it is retired as a display line everywhere else. **The display one-liner for marketing materials is "Built on experience. Focused on execution."** (2026-09-02; `reference/voice.md` § What we say.)
 
 ## Exporting
 
@@ -222,8 +255,11 @@ Always verify the export: correct page count, dark backgrounds actually dark, gr
 - `reference/voice.md` — **the canonical voice and messaging reference. Read it before writing DUS copy.**
 - `reference/electric-transmission-pillar.md` — **the settled electric transmission positioning. Read it before writing anything on that topic.**
 - `reference/electric-distribution-pillar.md`, `reference/fiber-optics-broadband-pillar.md`, `reference/gas-utility-pillar.md`, `reference/water-utility-pillar.md` — the four sibling service pillars (drafts in review, 2026-08-19). Same rule: read the service's pillar before writing on that service.
-- **DUS Reference Library** (Google Drive, `Dudley/DUS/Reference Library`) — the evidence layer, five docs: index, core competencies by function and service, per-service profiles, client and buyer intelligence, and proof/claims/confidentiality. Not in this repo; it lives in Drive so client-side and cowork agents can read it too.
+- **DUS Reference Library** (Google Drive, `Dudley/DUS/Reference Library`) — the evidence layer, six docs: index, core competencies by function and service, per-service profiles, client and buyer intelligence, proof/claims/confidentiality, and the company profile. Not in this repo; it lives in Drive so client-side and cowork agents can read it too.
 - **Anything from 2023 is retired.** The old DUS messaging material predates Garrett Gill and Savannah Cano and points at a direction the company is not going. It is archived at `Dudley/DUS/_Archive — Pre-2026 (stale, do not use)` and must never be mined, cited, or written from, not even with a caveat. Operator instruction, 2026-08-24.
 - `reference/brand-rules.md` — expanded visual rules and rationale.
 - `reference/design-source-brief.md` — **the DUS domain source material. Read it before making any visual asset that needs a concrete detail** (imagery, iconography, diagrams, data displays, industry-specific work). It carries the objects, dimensions, numbers, roles, and field realities that are specific to utility land services, harvested from the client's own onboarding calls. The system in this skill decides how things look; that file supplies what they're about, so an asset lands specific instead of generic.
-- `assets/` — logo PNGs and their base64 for reuse.
+- `exemplars/` — **captures of the shipped, public-facing work** (live site, one-pagers, SOQ, episode art), with an index in `exemplars/README.md` that maps each one to its source file and live URL and lists what is not a reference. Read at Step 0.
+- `podcast/` — the podcast branding kit and its rendered backgrounds. See "Podcast and video."
+- `assets/logo/` — the current logo masters (SVG, PDF, 3000px PNG) in four versions. See "Logo."
+- `assets/` — the embedded-size logo PNGs and their base64, the Kudu logo, and the coverage maps.

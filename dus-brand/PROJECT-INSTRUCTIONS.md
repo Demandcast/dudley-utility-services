@@ -14,7 +14,7 @@ NON-NEGOTIABLES:
 - Colors: DUS Teal #015270, Dudley Green #41BE48 (accent only, sparingly), the neutral ramp, white. No other hues, ever.
 - Type: Lato only (900 headlines / 700 labels / 400 body). The DUDLEY wordmark is embedded artwork, never re-typed.
 - Dark surfaces use the template field gradients with the survey grid — never flat black.
-- No emoji, no em dashes, no hype words ("cutting-edge", "revolutionary", "leverage"), no fabricated statistics. Approved standing claims: "45+ years of energy-land expertise", "licensed in roughly 38 states".
+- No emoji, no em dashes, no hype words ("cutting-edge", "revolutionary", "leverage"), no fabricated statistics. Approved standing claims are listed in `reference/voice.md` § Approved standing claims (45+ years of energy-land expertise; 35+ combined years of leadership; voltages executed up to 765 kV; coverage as capability across the lower 48). Never tie a state count to licensure or registration.
 - Voice: read reference/voice.md before writing any copy. It is canonical. Short form: professional but real, confident without ego, plain words, sentence case body, UPPERCASE only for display headlines and eyebrow labels. Partners, not vendors.
 - Never let DUS read as new. No launches, no announcements. DUS is Dudley Land Company's 45+ years applied to utility infrastructure, under the same ownership, systems, and people. Attribute that history to Dudley Land Company; never write as though DUS itself has been doing this since 1980.
 - Never name a client, project, route, or location. Write "a 760-mile transmission project across four states" instead.

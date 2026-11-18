@@ -27,10 +27,12 @@ dus-brand/
   README-FOR-DUS.md      Human setup + usage guide
   PROJECT-INSTRUCTIONS.md Paste-in text for a Claude Project
   dus-core.css           Design system source (tokens, motifs, components)
-  templates/             9 locked HTML templates Claude copies and fills
+  templates/             10 locked HTML templates Claude copies and fills
   reference/voice.md     Canonical voice and messaging (read before writing copy)
   reference/brand-rules.md  Distilled visual rules
-  assets/                Official DUS logo files
+  assets/                Official DUS logo files (current masters in assets/logo/)
+  exemplars/             Captures of the shipped, public-facing work, with an index
+  podcast/               Podcast branding kit and backgrounds
 samples/                 Rendered examples (PNG + PDF) of what the system produces
 ```
 
@@ -39,7 +41,7 @@ samples/                 Rendered examples (PNG + PDF) of what the system produc
 - Colors: **DUS Teal `#015270`** (primary), **Dudley Green `#41BE48`** (accent, sparingly), ink, gray, white. Nothing else.
 - Type: **Lato**, three weights. The DUDLEY wordmark is artwork, never re-typed.
 - The signature motif is the **route alignment**: a surveyor's dash-dot centerline with easement corridor, PI monuments, and station ticks, over a plat-style survey grid.
-- No emoji, no hype words, no invented numbers. Approved standing claims: 45+ years of energy-land expertise; licensed in roughly 38 states.
+- No emoji, no hype words, no invented numbers. Approved standing claims live in `dus-brand/reference/voice.md`: 45+ years of energy-land expertise, 35+ combined years of leadership, voltages executed up to 765 kV, and coverage across the lower 48.
 - Voice is canonical in `dus-brand/reference/voice.md`. DUS never reads as new, never names a client, and never mentions renewables.
 
 ## The site

@@ -63,7 +63,7 @@ Point a session at this folder. It reads `SKILL.md` and the templates directly, 
 - "Draft a proposal for [Client] for right-of-way acquisition on the [Project] corridor: 4 phases, here's the scope and pricing…"
 - "Turn these bullet points into a 10-slide deck for Thursday's kickoff."
 
-**Give real content.** The system never invents numbers or project facts. The only standing claims it uses are "45+ years of energy-land expertise" and "licensed in roughly 38 states." If you don't provide a stat, you get a visible `[placeholder]` instead of a made-up number. That's deliberate.
+**Give real content.** The system never invents numbers or project facts. The only standing claims it uses are the approved ones in `reference/voice.md`: 45+ years of energy-land expertise, 35+ combined years of leadership, voltages executed up to 765 kV, and coverage across the lower 48. If you don't provide a stat, you get a visible `[placeholder]` instead of a made-up number. That's deliberate.
 
 **It won't name your clients.** Ask for a case study naming a utility and you get an anonymized version ("a Gulf Coast investor-owned utility"). Client confidentiality is built in, because publishing client details is exactly the judgment that disqualifies a vendor in this industry.
 

@@ -36,7 +36,7 @@ Proportions on a typical asset: ~70% white/neutral, ~20% teal, ~8% ink, ≤2% gr
 | Eyebrow | 700, 13px, 0.16em tracking, UPPERCASE, leading green square | Section markers |
 | Micro | 700, 11px, 0.22em tracking, UPPERCASE, muted | Plat-sheet annotations, page counters |
 
-The DUDLEY wordmark is custom condensed artwork. It is never re-typed, stretched, recolored, or given effects. Black/green lockup on light; white/green on dark; clear space = ½ the wordmark height; minimum width 120px digital / 1.1in print.
+The DUDLEY wordmark is custom condensed artwork. It is never re-typed, stretched, recolored, or given effects. Black/green lockup on light; white/green on dark (the descriptor is always Dudley Green, flush left, never teal or light blue; masters in `assets/logo/`); clear space = ½ the wordmark height; minimum width 120px digital / 1.1in print.
 
 ## Voice
 
@@ -52,5 +52,5 @@ Only real fieldwork: courthouses, working farms and ranches, title documents, su
 
 - **Dark canvas** = field gradient + survey grid + (usually) green horizon + white/green logo + optional single route line at low opacity.
 - **Light canvas** = white + optional light grid + teal/ink type + green accents + black/green logo.
-- **Print docs** = white ground, teal header/footer bands where specified, corner ticks framing body content, `.dus-band` ink footer with contact line.
+- **Print docs** = white ground, teal header/footer bands where specified, corner ticks framing body content, `.dus-band` teal field footer with contact line.
 - Checklists use the parent-brand green circular check. Stats use huge Lato Black numerals with the unit in green.
