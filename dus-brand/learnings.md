@@ -130,3 +130,8 @@ This means:
 - [2026-10-20] **Brand book PDF build: render at a 720px viewport** (letter width minus 0.5in margins), then `page.pdf({preferCSSPageSize:true, printBackground:true})`. The template previews scale to the window width, so a default-viewport render shrinks them to half width and reflows the back third of the book.
 
 - [2026-11-09] **The DUS logo keeps the Dudley Green UTILITY SERVICES descriptor.** The 2026-10-20 teal rebuild was a proposal; Garrett prefers the green, so the original green logo files are restored everywhere. Don't re-propose teal.
+
+- [2026-11-18] **The live Vercel site is the only website design reference.** The Webflow rebuild changed parts of the design system and Jenny doesn't approve the changes: "I want to stick to everything that's in the live Vercel site as far as design goes." Never reference, match, or borrow from the Webflow version.
+- [2026-11-18] **Exemplars and logo masters added.** `exemplars/` holds captures of the shipped public work (live site, the two live one-pagers, the SOQ, DUS 001 episode art) with an index of what is and isn't a reference. `assets/logo/` holds the current green masters from Drive (`DUS/Design/DUS Logo/DUS Logo - Green (Current)`) as SVG, PDF, and 3000px PNG. The unused light-blue-descriptor file `assets/dus-logo-white-teal.png` was removed.
+- [2026-11-18] **Open defect: the water and fiber one-pager headers crowd the logo against the kicker line.** Both PDFs in `downloads/` show the UTILITY SERVICES descriptor nearly touching the kicker. Fix the header spacing before either page goes live; the transmission and gas one-pagers are the correct reference.
+
